@@ -21,7 +21,7 @@ const Navbar = () => {
     const json = await res.json();
     setSearchData(json[1]);
   };
-  // if (inputValue.trim.length === 0) return;
+
   useEffect(() => {
     let timer = setTimeout(() => {
       data();
@@ -60,7 +60,6 @@ const Navbar = () => {
                 placeholder="Search"
                 onFocus={() => {
                   setShowClear(true);
-                  // console.log(showClear);
                 }}
                 onBlur={() => {
                   setTimeout(() => {
@@ -98,9 +97,9 @@ const Navbar = () => {
           </p>
         </div>
         <div className="flex justify-evenly w-[20%]  ">
-          <BiSolidVideoPlus className="text-3xl cursor-pointer  " />
-          <IoIosNotifications className="text-3xl cursor-pointer  " />
-          <FaUserCircle className="text-3xl  cursor-pointer " />
+          <BiSolidVideoPlus className="text-3xl cursor-pointer" />
+          <IoIosNotifications className="text-3xl cursor-pointer" />
+          <FaUserCircle className="text-3xl  cursor-pointer" />
         </div>
       </div>
       {showClear && (

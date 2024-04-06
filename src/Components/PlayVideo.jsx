@@ -17,17 +17,17 @@ const PlayVideo = () => {
     setVideoData(res?.items[0]);
   };
   const title = videoData?.snippet?.title;
+  const channelId = videoData?.snippet?.channelId;
 
   useEffect(() => {
     getData();
   }, [id]);
   const rec = useSearch(title);
 
-  //   console.log(rec);
   return (
     <div>
       <div className="mt-16 md:px-4 flex flex-col md:flex md:flex-row w-full md:gap-4 gap-3">
-        <VideoPlayer id={id} />
+        <VideoPlayer id={id} channelId={channelId} />
         <div className="right w-[100%] md:w-[40%]   md:p-3 p-1">
           {!rec ? (
             <div>"Loading"</div>
